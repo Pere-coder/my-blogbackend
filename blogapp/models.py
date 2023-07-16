@@ -18,5 +18,6 @@ class Blog(models.Model):
     lastname = models.CharField(max_length=100)
     email = models.EmailField(max_length=100)
     phone = models.CharField(max_length=100)
+    blogtitle = models.CharField(max_length=100, default='Blog title')
     blog = models.TextField(default='no blog post')
     date = models.DateTimeField(default=timezone.now)
