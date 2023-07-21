@@ -12,4 +12,4 @@ class FormSerializer(serializers.ModelSerializer):
 class BlogSerializer(serializers.ModelSerializer):
     class Meta:
         model = Blog
-        fields = ['firstname', 'lastname', 'email', 'phone','blogtitle', 'blog', 'date']
+        fields = ['id', 'firstname', 'lastname', 'email', 'phone','blogtitle', 'blog', 'date']

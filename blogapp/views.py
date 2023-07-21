@@ -12,6 +12,14 @@ class Form(generics.ListCreateAPIView):
     serializer_class = FormSerializer
     
     
+
+    
+    
+class BlogDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Blog.objects.all()
+    serializer_class = BlogSerializer
+    
+    
 class Blog(generics.ListCreateAPIView):
     queryset = Blog.objects.all()
     serializer_class = BlogSerializer
