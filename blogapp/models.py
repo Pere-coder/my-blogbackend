@@ -19,5 +19,20 @@ class Blog(models.Model):
     email = models.EmailField(max_length=100)
     phone = models.CharField(max_length=100)
     blogtitle = models.CharField(max_length=100, default='Blog title')
+    image = models.ImageField(default='myimage.jpg')
     blog = models.TextField(default='no blog post')
     date = models.DateTimeField(default=timezone.now)
+    
+    
+    
+class News(models.Model):
+    image = models.ImageField()
+    News = models.CharField(max_length=100)
+    date = models.DateTimeField(default=timezone.now)
+    
+    
+# class YourModelName(models.Model):
+#     # Other fields in your model
+#     # ...
+
+#     image_field = models.ImageField(upload_to='path/to/your/upload/directory/')

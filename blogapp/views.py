@@ -1,9 +1,9 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
-from .serializers import FormSerializer, BlogSerializer
+from .serializers import FormSerializer, BlogSerializer, NewsSerializer
 from rest_framework import generics
 from rest_framework.decorators import api_view
-from .models import Form, Blog
+from .models import Form, Blog, News
 from django.db.models import Q
 
 
@@ -34,3 +34,8 @@ class Blogs(generics.ListCreateAPIView):
                 | Q(blog__icontains=search_query)
              )
          return queryset
+     
+    
+class News(generics.ListCreateAPIView):
+    queryset = News.objects.all()
+    serializer_class = NewsSerializer

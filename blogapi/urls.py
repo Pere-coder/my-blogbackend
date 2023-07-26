@@ -16,12 +16,20 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from blogapp.views import Form, Blogs, BlogDetail
+from blogapp.views import Form, Blogs, BlogDetail, News
+from django.conf.urls.static import static
+from django.conf import settings
+import os
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', Form.as_view(), name= 'email'),
     path('blog/', Blogs.as_view(), name='blog'),
-    path('blog/<int:pk>', BlogDetail.as_view(), name='blog')
+    path('blog/<int:pk>', BlogDetail.as_view(), name='blog'),
+    path('news/', News.as_view(), name='news'),
     
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

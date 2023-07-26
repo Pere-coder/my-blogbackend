@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Form, Blog
+from .models import Form, Blog, News
 
 
 
@@ -12,4 +12,10 @@ class FormSerializer(serializers.ModelSerializer):
 class BlogSerializer(serializers.ModelSerializer):
     class Meta:
         model = Blog
-        fields = ['id', 'firstname', 'lastname', 'email', 'phone', 'blogtitle', 'blog', 'date']
+        fields = ['id', 'firstname', 'lastname', 'email', 'phone', 'blogtitle','image', 'blog', 'date']
+        
+
+class NewsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = News
+        fields = ['id', 'image', 'News', ] 
