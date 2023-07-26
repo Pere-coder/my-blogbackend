@@ -2,7 +2,7 @@ from django.contrib import admin
 from .models import Form, Blog, News
 
 class BlogAdmin(admin.ModelAdmin):
-    list_display = ('firstname', 'lastname', 'email', 'phone','blogtitle', 'blog', 'date')
+    list_display = ('firstname', 'lastname', 'email', 'phone','blogtitle','image', 'blog', 'date')
 
 class FormAdmin(admin.ModelAdmin):
     list_display = ("email", "date")
