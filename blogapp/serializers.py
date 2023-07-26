@@ -18,4 +18,6 @@ class BlogSerializer(serializers.ModelSerializer):
 class NewsSerializer(serializers.ModelSerializer):
     class Meta:
         model = News
-        fields = ['id', 'image', 'News', ] 
+        fields = ['id', 'image', 'News_title', 'News', ] 
+        
+        

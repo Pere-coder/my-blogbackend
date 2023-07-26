@@ -27,6 +27,7 @@ class Blog(models.Model):
     
 class News(models.Model):
     image = models.ImageField()
+    News_title = models.CharField(max_length=100, default='news title')
     News = models.CharField(max_length=100)
     date = models.DateTimeField(default=timezone.now)
     
