@@ -21,7 +21,7 @@ class Blog(models.Model):
     blogtitle = models.CharField(max_length=100, default='Blog title')
     image = models.ImageField(default='myimage.jpg')
     blog = models.TextField(default='no blog post')
-    date = models.DateTimeField(default=timezone.now)
+    date = models.DateField(auto_now_add=True)
     
     
     
@@ -29,11 +29,9 @@ class News(models.Model):
     image = models.ImageField()
     News_title = models.CharField(max_length=100, default='news title')
     News = models.CharField(max_length=100)
-    date = models.DateTimeField(default=timezone.now)
+    date = models.DateField(auto_now_add=True)
     
     
-# class YourModelName(models.Model):
-#     # Other fields in your model
-#     # ...
-
-#     image_field = models.ImageField(upload_to='path/to/your/upload/directory/')
+class Comment(models.Model):
+    comment = models.CharField(max_length=500)
+    date = models.DateField(auto_now_add=True)

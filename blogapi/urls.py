@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from blogapp.views import Form, Blogs, BlogDetail, News
+from blogapp.views import Form, Blogs, BlogDetail, News, Comments
 from django.conf.urls.static import static
 from django.conf import settings
 import os
@@ -28,7 +28,8 @@ urlpatterns = [
     path('blog/', Blogs.as_view(), name='blog'),
     path('blog/<int:pk>', BlogDetail.as_view(), name='blog'),
     path('news/', News.as_view(), name='news'),
-    
+    path('comment/', Comments.as_view(), name='comment'),
+
 ]
 
 if settings.DEBUG:
